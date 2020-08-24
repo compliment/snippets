@@ -1,0 +1,9 @@
+$ cat mylist
+file '/path/to/file1'
+file '/path/to/file2'
+file '/path/to/file3'
+
+$ ffmpeg -f concat -safe 0 -i mylist -c copy output.mp4
+
+# The -safe 0 is for recent ffmpeg versions complaining about Unsafe file name
+# https://stackoverflow.com/questions/7333232/how-to-concatenate-two-mp4-files-using-ffmpeg
